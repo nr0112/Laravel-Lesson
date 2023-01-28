@@ -17,6 +17,6 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'index'])
     ->name('posts.index');
 
-// URLが '/posts/$id'で、getリクエストが来ると実行される。 PostControllerのshowが呼び出される
-Route::get('/posts/{id}', [PostController::class, 'show'])
+// URLが '/posts/$post'で、getリクエストが来ると実行される。 PostControllerのshowが呼び出される
+Route::get('/posts/{post}', [PostController::class, 'show'])
     ->name('posts.show');

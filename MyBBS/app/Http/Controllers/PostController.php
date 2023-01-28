@@ -3,18 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
-    /**
-     * 配列の宣言
-     */
-    private $posts = [
-        'Title A',
-        'Title B',
-        'Title C',
-    ];
-
     /**
      * indexメソッド：一覧表示を行うメソッド
      * メモ
@@ -23,18 +15,24 @@ class PostController extends Controller
      */
     public function index()
     {
+        // $posts = Post::all();
+        // $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::latest()->get();
         return view('index')
-            ->with(['posts' => $this->posts]);
+            ->with(['posts' => $posts]);
     }
 
     /**
      * showメソッド：詳細表示を行うメソッド
      * メモ
         * 引数にweb.phpでルート設定した変数にすることで、値を持ってこれる
+        * 引数にPost $postでルートからの値を取得することをImplicit Bindingという
      */
-    public function show($id)
+    public function show(Post $post)
     {
+        // 一致するものがない時に404エラーを表示
+        // $post = Post::findOrFail($id);
         return view('posts.show')
-            ->with(['post' => $this->posts[$id]]);
+            ->with(['post' => $post]);
     }
 }
