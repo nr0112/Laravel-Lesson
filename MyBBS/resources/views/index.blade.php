@@ -6,7 +6,10 @@
         My BBS
     </x-slot>
 
-    <h1>My BBS</h1>
+    <h1>
+        <span>BBS</span>
+        <a href="{{ route('posts.create') }}">[Add]</a>
+    </h1>
             <ul>
                 {{-- 値がある時 --}}
                 @forelse ($posts as $post)
