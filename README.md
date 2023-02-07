@@ -4,7 +4,7 @@
 HIBIKI
 
 - [ ] [PHP入門](https://dotinstall.com/search?q=PHP)
-  - [ ] [はじめてのPHP](https://dotinstall.com/lessons/basic_php_v3)
+  - [x] [はじめてのPHP](https://dotinstall.com/lessons/basic_php_v3)
   - [ ] [ビルトイン関数編](https://dotinstall.com/lessons/basic_php_functions)
   - [ ] [オブジェクト編](https://dotinstall.com/lessons/basic_php_objects)
   - [ ] [基礎文法編](https://dotinstall.com/lessons/basic_php_grammar)
