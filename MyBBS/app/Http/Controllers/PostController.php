@@ -3,24 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
-    private $posts = [
-        'Title A',
-        'Title B',
-        'Title C',
-    ];
+
 
     public function index()
     {
-        return view('index')
-            ->with(['posts' => $this->posts]);
-    }
+    //get必要、更新順に並べる
+    $posts= Post::latest()->get();
 
-    public function show($id)
+
+        return view('index')
+            ->with(['posts' => $posts]);
+    }
+//Implicit Binding
+    public function show(Post $post)
     {
+// 上記によりいらない　$post= Post::findOrFail($id);//エラーページの表示
+
+
         return view('posts.show')
-            ->with(['post' => $this->posts[$id]]);
+            ->with(['post' => $post]);
     }
 }
