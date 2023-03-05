@@ -2,7 +2,12 @@
     <x-slot name="title">
         My BBS
     </x-slot>
-    <h1>My BBS</h1>
+    <h1>
+       {{-- タイトル  --}}
+        <span>My BBS</span>
+        {{-- リンク  --}}
+        <a href="{{route('posts.create')}}">[Add]</a>
+    </h1>
     <ul>
         @forelse ($posts as $post)
         {{-- //showメソッドにつながるリンクを生成 --}}

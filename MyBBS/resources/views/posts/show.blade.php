@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-       {{$post->title}} - My BSS
+       {{$post->title}} - My BBS
     </x-slot>
 
     <div class="back-link">

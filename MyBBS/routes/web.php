@@ -13,8 +13,19 @@ use App\Http\Controllers\PostController;
 |
 */
 
+// /posts/create
     Route::get('/', [PostController::class, 'index'])
 ->name('posts.index');
 
+
+
     Route::get('/posts/{post}', [PostController::class, 'show'])
-    ->name('posts.show');
+    ->name('posts.show')
+    //数値しか受け付けない宣言　正規表現使用
+    ->where('post','[0-9]+');
+
+
+        // posts.create にアクセスしたら PostController の create メソッドを呼ぶ
+        Route::get('/posts/create', [PostController::class, 'create'])
+        ->name('posts.create');
+

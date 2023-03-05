@@ -21,10 +21,13 @@ class PostController extends Controller
 //Implicit Binding
     public function show(Post $post)
     {
+         return view('posts.show')
+        ->with(['post' => $post]);
+}
+
 // 上記によりいらない　$post= Post::findOrFail($id);//エラーページの表示
 
-
-        return view('posts.show')
-            ->with(['post' => $post]);
+public function create(){
+    return view ('posts.create');
     }
 }
