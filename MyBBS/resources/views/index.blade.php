@@ -14,7 +14,7 @@
             <li>
                 <a href="{{ route('posts.show',$post) }}">
                     {{-- post自動でくる --}}
-                    {{ $post->title }}
+                {{ $post->title }}
                 </a>
             </li>
         @empty

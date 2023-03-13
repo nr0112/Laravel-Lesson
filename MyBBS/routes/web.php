@@ -25,7 +25,22 @@ use App\Http\Controllers\PostController;
     ->where('post','[0-9]+');
 
 
-        // posts.create にアクセスしたら PostController の create メソッドを呼ぶ
-        Route::get('/posts/create', [PostController::class, 'create'])
-        ->name('posts.create');
+        // // posts.create にアクセスしたら PostController の create メソッドを呼ぶ
+     Route::get('/posts/create', [PostController::class, 'create'])
+    ->name('posts.create');
+
+  // posts.create にアクセスしたら PostController の create メソッドを呼ぶ
+  Route::post('/posts/store', [PostController::class, 'store'])
+  ->name('posts.store');
+
+  Route::get('/posts/{post}/edit', [PostController::class, 'edit'])  //URLの名前 //メソッド名
+  ->name('posts.edit')
+  //数値しか受け付けない宣言　正規表現使用
+  ->where('post','[0-9]+');
+
+//データの一部の場合はpatch
+  Route::patch('/posts/{post}/update', [PostController::class, 'update'])  //URLの名前 //メソッド名
+  ->name('posts.update')
+  //数値しか受け付けない宣言　正規表現使用
+  ->where('post','[0-9]+');
 
