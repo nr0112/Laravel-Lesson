@@ -1,0 +1,80 @@
+/* aタグからすべての下線を消す */
+a{
+text-decoration: none
+
+}
+.container{
+    width: 480px;
+    margin: 40px auto;
+}
+h1{
+    border-bottom: 1px solid;
+    font-size: 18px;
+    margin: 16px 0;
+    padding-bottom: 8px;
+    display:flex;
+    align-items: center;
+}
+h1>a{
+    font-size: 16px;
+    font-weight:normal;
+    margin-left:auto;
+    /* 右に寄せる */
+}
+
+ li{
+    line-height: 1.6;
+    margin-bottom: 8px;
+ }
+.back-link{
+    font-size: 14px;
+}
+
+p{
+    line-height : 1.6;
+
+}
+
+input,
+textarea{
+    padding: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea{
+    height: 160px;
+}
+
+button{
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.form-group{
+    margin-bottom: 16px;
+}
+
+.form-button{
+    text-align: right;
+}
+
+.error{
+    color:red;
+    font-size:14px;
+    margin-top:8px;
+}
+
+.btn{
+/* 枠とれる */
+border: none;
+/* 背景色とれる */
+background: transparent;
+font-size: 16px;
+font-weight: normal;
+color: #15c;
+/* マウスポインターが要素の上にいるときに表示されるマウスカーソルの種類 */
+cursor: pointer;
+/* 上下のズレを調整 */
+vertical-align: 1px;
+}
