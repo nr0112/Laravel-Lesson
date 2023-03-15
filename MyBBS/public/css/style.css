@@ -1,3 +1,8 @@
+/* aタグからすべての下線を消す */
+a{
+text-decoration: none
+
+}
 .container{
     width: 480px;
     margin: 40px auto;
@@ -58,4 +63,18 @@ button{
     color:red;
     font-size:14px;
     margin-top:8px;
+}
+
+.btn{
+/* 枠とれる */
+border: none;
+/* 背景色とれる */
+background: transparent;
+font-size: 16px;
+font-weight: normal;
+color: #15c;
+/* マウスポインターが要素の上にいるときに表示されるマウスカーソルの種類 */
+cursor: pointer;
+/* 上下のズレを調整 */
+vertical-align: 1px;
 }

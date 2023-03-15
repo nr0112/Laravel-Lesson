@@ -25,7 +25,7 @@ use App\Http\Controllers\PostController;
     ->where('post','[0-9]+');
 
 
-        // // posts.create にアクセスしたら PostController の create メソッドを呼ぶ
+     // // posts.create にアクセスしたら PostController の create メソッドを呼ぶ
      Route::get('/posts/create', [PostController::class, 'create'])
     ->name('posts.create');
 
@@ -35,12 +35,23 @@ use App\Http\Controllers\PostController;
 
   Route::get('/posts/{post}/edit', [PostController::class, 'edit'])  //URLの名前 //メソッド名
   ->name('posts.edit')
-  //数値しか受け付けない宣言　正規表現使用
+  //数値しか受け付けない宣言正規表現使用
   ->where('post','[0-9]+');
 
 //データの一部の場合はpatch
   Route::patch('/posts/{post}/update', [PostController::class, 'update'])  //URLの名前 //メソッド名
   ->name('posts.update')
-  //数値しか受け付けない宣言　正規表現使用
+  //数値しか受け付けない宣言正規表現使用
   ->where('post','[0-9]+');
 
+  //データの送信形式は delete
+  Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])  //URLの名前 //メソッド名
+  ->name('posts.destroy')
+  //数値しか受け付けない宣言正規表現使用
+  ->where('post','[0-9]+');
+
+
+
+// POST なら新規作成
+// PATCH なら修正
+// DELETE なら削除

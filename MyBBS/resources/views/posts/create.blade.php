@@ -27,7 +27,7 @@
             <label>
                 Body
                 {{--{{old('body')}}で値が残る設定 --}}
-                <textarea name="body"> {{old('body')}}</textarea>
+                <textarea name="body">{{old('body')}}</textarea>
             </label>
             @error('body')
             <div class="error">{{$message}}</div>

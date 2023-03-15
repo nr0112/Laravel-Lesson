@@ -10,10 +10,31 @@
           <span>{{ $post->title }}</span>
             {{-- h1にフレックスボックスの設置をした --}}
          <a href="{{route('posts.edit',$post)}}">[Edit]</a>
+         {{-- 削除タグ actionの後は送信先(route('posts.destory')、ポストのデータを渡す--}}
+         {{-- idで扱いやすくなる --}}
+         <form method="post" action="{{route('posts.destroy',$post)}}"id="delete_post">
+            {{-- データの削除はDELETで送信 --}}
+            @method('DELETE')
+        {{--ユーザ本人以外の者が捏造（ねつぞう）したコンテンツに基づいて発せられたHTTPリクエストを Webアプリケーションが受け付けないようにすること --}}
+            @csrf
+            <button class="btn">[x]</button>
+         </form>
         </h1>
      {{-- nl2brは改行のやつ。blade で値を埋め込みつつ、文字実態参照への変換を無効にする --}}
      {{-- $post->bodにhtmlにタグが含まれていたら、文字実態参照に変換してあげると良い --}}
-     {{-- HTML タグが混入していたら、文字実態参照に変換してくれて、そのうえでさらにこのデータに改行が含まれていたら
-      nl2br で br タグに変換してくれて、そしてその br タグは blade のこの記法でそのまま出力されるのでうまくいきそうです。 --}}
-        <p>{!! nl2br(e($post->body))!!}</p>
+        <p>{!! nl2br(e($post->body)) !!}</p>
+
+<script>
+    'use strict';
+    {
+        document.getElementById('delete_post').addEventListener('submit', e=>{
+            e.preventDefault();
+
+            if(!confirm('Sure to delete?')){
+                return;
+            }
+        e.target.submit();
+        });
+    }
+</script>
     </x-layout>

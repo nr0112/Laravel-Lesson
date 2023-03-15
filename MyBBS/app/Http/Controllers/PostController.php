@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -13,8 +13,6 @@ class PostController extends Controller
     {
     //get必要、更新順に並べる
     $posts= Post::latest()->get();
-
-
         return view('index')
             ->with(['posts' => $posts]);
     }
@@ -30,19 +28,9 @@ class PostController extends Controller
 public function create(){
     return view ('posts.create');
     }
-    public function store(Request $request)
+    public function store(PostRequest $request)
+    //バリエーション実行
     {
-        //ナビゲーション使用（コントローラーで入力するされたルールの検証の設定）
-        $request->validate([
-            'title'=>'required|min:3',//3文字欲しいルール
-            'body' =>'required',//元の状態に差し戻してくれる
-        ],
-         [
-            'title.required'=>'タイトルは必須です',//エラーメッセーじの修正
-            'title.min'=>':min 文字以上入力してください',//3文字以上必須の指定
-            'body.required' =>'本文は必須です',//元の状態に差し戻してくれる
-         ]);
-
 
         $post=new Post();
         $post->title=$request->title;
@@ -60,21 +48,8 @@ public function edit(Post $post)
     ->with(['post' => $post]);
 }
 
-
-public function update(Request $request,Post $post)
+public function update(PostRequest $request,Post $post)
     {
-        //ナビゲーション使用（コントローラーで入力するされたルールの検証の設定）
-        $request->validate([
-            'title'=>'required|min:3',//3文字欲しいルール
-            'body' =>'required',//元の状態に差し戻してくれる
-        ],
-         [
-            'title.required'=>'タイトルは必須です',//エラーメッセーじの修正
-            'title.min'=>':min 文字以上入力してください',//3文字以上必須の指定
-            'body.required' =>'本文は必須です',//元の状態に差し戻してくれる
-         ]);
-
-
         // $post=new Post();インスタンスはいらない
         $post->title=$request->title;
         $post->body=$request->body;
@@ -83,5 +58,13 @@ public function update(Request $request,Post $post)
         //元に戻る
         return redirect()
         ->route('posts.show',$post);//データの更新後は詳細ページ
+    }
+
+    public function destroy(Post $post)
+    {
+    $post->delete();
+
+    return redirect()
+        ->route('posts.index');
     }
 }
