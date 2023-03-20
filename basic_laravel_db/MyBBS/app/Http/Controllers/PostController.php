@@ -10,7 +10,6 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
         $posts = Post::latest()->get();
 
         return view('index')
@@ -19,7 +18,8 @@ class PostController extends Controller
 
     public function show(int $id)
     {
+        $post = Post::findorFail($id);
         return view('posts.show')
-            ->with(['post' => $posts[$id]]);
+            ->with(['post' => $post]);
     }
 }
