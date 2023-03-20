@@ -9,7 +9,7 @@
 
 <body>
     <div class="container">
-        <a href="/">
+        <a href="{{ route('posts.index') }}">
             <div class="back-link">
                 &laquo Back
             </div>
