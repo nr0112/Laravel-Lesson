@@ -7,7 +7,7 @@ HIBIKI
   - [x] [はじめてのPHP](https://dotinstall.com/lessons/basic_php_v3)
   - [ ] [ビルトイン関数編](https://dotinstall.com/lessons/basic_php_functions)
   - [ ] [オブジェクト編](https://dotinstall.com/lessons/basic_php_objects)
-  - [ ] [基礎文法編](https://dotinstall.com/lessons/basic_php_grammar)
+  - [x] [基礎文法編](https://dotinstall.com/lessons/basic_php_grammar)
   - [ ] [ウェブ開発編](https://dotinstall.com/lessons/basic_php_webdev)
   - [ ] [データベース編](https://dotinstall.com/lessons/basic_php_db_v2)
 
