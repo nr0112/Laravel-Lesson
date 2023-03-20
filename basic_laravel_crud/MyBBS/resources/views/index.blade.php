@@ -1,6 +1,9 @@
 <x-layout>
     <x-slot name="title">My BBS</x-slot>
-    <h1>My BBS</h1>
+    <h1>
+        <span>My BBS</span>
+        <a href="{{route('posts.create')}}">[ADD]</a>
+    </h1>
     <ul>
         @forelse ($posts as $index => $post)
             <li>
