@@ -6,14 +6,21 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index() {
-    $posts = [
+    private $posts = [
         'Title A',
         'Title B',
         'Title C',
     ];
 
-    return view('index')
-        ->with(['posts' => $posts]);
-}
+    public function index()
+    {
+        return view('index')
+            ->with(['posts' => $this->posts]);
+    }
+
+    public function show(int $id)
+    {
+        return view('posts.show')
+            ->with(['post' => $this->posts[$id]]);
+    }
 }
