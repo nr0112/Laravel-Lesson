@@ -7,7 +7,7 @@
     </a>
     <h1>Add new post</h1>
 
-    <form action="" method="post">
+    <form action="{{ route('posts.store') }}" method="post">
         @csrf
         <div class="form-group">
             <label>
