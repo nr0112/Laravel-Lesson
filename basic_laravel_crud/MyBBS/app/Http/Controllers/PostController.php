@@ -27,9 +27,14 @@ class PostController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'title' => 'required|min:3',
+            'body' => 'required',
+        ]);
+
         $post = new Post();
         $post->title = $request->title;
-        $post->bodt = $request->body;
+        $post->body = $request->body;
         $post->save();
 
         return redirect()->route('posts.index');
