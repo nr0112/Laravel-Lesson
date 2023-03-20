@@ -9,10 +9,11 @@
     <div class="container">
         <h1>My BBS</h1>
         <ul>
-            {{-- <li><?php echo htmlspecialchars($posts[0], ENT_QUOTES, 'UTF-8'); ?></li> --}}
-            <li>{{ $posts[0] }}</li>
-            <li>{{ $posts[1] }}</li>
-            <li>{{ $posts[2] }}</li>
+            @forelse ($posts as $post)
+                <li>{{ $post }}</li>
+            @empty
+                <li>No posts yet!</li>
+            @endforelse
         </ul>
     </div>
 </body>
