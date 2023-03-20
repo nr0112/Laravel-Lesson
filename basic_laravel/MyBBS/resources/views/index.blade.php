@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url('/css/style.css') }}">
     <title>My BBS</title>
 </head>
 <body>

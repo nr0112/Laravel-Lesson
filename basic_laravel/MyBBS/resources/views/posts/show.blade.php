@@ -3,12 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url('/css/style.css') }}">
     <title>My BBS</title>
 </head>
 
 <body>
     <div class="container">
+        <a href="/">
+            <div class="back-link">
+                &laquo Back
+            </div>
+        </a>
         <h1>{{ $post }}</h1>
     </div>
 </body>
