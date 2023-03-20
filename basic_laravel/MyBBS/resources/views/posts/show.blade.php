@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot name="title">{{ $post }} - My BBS</x-slot>
     <a href="{{ route('posts.index') }}">
         <div class="back-link">
             &laquo Back
