@@ -5,3 +5,16 @@
   あとシングルの方が早いらしい。変数を使わないならシングルにすべし。
   
   参考：https://qiita.com/bitcoinjpnnet/items/64458299eaeefbacab44
+  
+- JavaScriptと違って、`3 + '6'`としても`'3' + 6`としてもどちらも出力は整数型。文字列として結合したいときは`.`。
+  ```PHP
+  <?php
+
+  var_dump('3' + 6); // =>int(9)
+
+  var_dump(3 + '6'); // =>int(9)
+
+  var_dump(3 . '6'); // => string(2) "36"
+
+  var_dump('3' . 6); // => string(2) "36"
+  ```
