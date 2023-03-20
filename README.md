@@ -12,7 +12,7 @@ HIBIKI
   - [ ] [データベース編](https://dotinstall.com/lessons/basic_php_db_v2)
 
 - [ ] [Laravel 8入門](https://dotinstall.com/search?q=laravel)
-  - [ ] [基本機能編](https://dotinstall.com/lessons/basic_laravel_v3)
+  - [x] [基本機能編](https://dotinstall.com/lessons/basic_laravel_v3)
   - [ ] [データベース編](https://dotinstall.com/lessons/basic_laravel_db)
   - [ ] [CRUD処理編](https://dotinstall.com/lessons/basic_laravel_crud)
   - [ ] [リレーション編](https://dotinstall.com/lessons/basic_laravel_relations)
