@@ -1,3 +1,9 @@
+<?php
+
+dd($posts);
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
