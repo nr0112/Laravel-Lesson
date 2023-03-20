@@ -30,3 +30,27 @@ li {
 p{
     line-height: 1.6;
 }
+
+input, textarea{
+    padding: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea
+{
+    height: 160px;
+}
+
+button{
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.form-group{
+    margin-bottom: 16px;
+}
+
+.form-button{
+    text-align: right;
+}
