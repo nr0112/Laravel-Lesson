@@ -23,11 +23,13 @@ class PostController extends Controller
             ->with(['post' => $post]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('posts.create');
     }
 
-    public function store(PostRequest $request){
+    public function store(PostRequest $request)
+    {
         $post = new Post();
         $post->title = $request->title;
         $post->body = $request->body;
@@ -39,7 +41,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         return view('posts.edit')
-        ->with(['post' => $post]);
+            ->with(['post' => $post]);
     }
 
     public function update(PostRequest $request, Post $post)
@@ -49,5 +51,12 @@ class PostController extends Controller
         $post->save();
 
         return redirect()->route('posts.show', $post);
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect()->route('posts.index');
     }
 }
