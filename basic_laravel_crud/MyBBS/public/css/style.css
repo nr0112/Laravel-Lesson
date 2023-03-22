@@ -60,3 +60,13 @@ button{
     font-size: 14px;
     margin-top: 8px;
 }
+
+.btn{
+    border: none;
+    background-color: #a00;
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    cursor: pointer;
+    vertical-align: 1px;
+}
