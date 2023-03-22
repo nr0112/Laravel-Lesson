@@ -7,7 +7,8 @@
     </a>
     <h1>Edit post</h1>
 
-    <form action="" method="post">
+    <form action="{{  route('posts.update', $post) }}" method="post">
+        @method('PATCH')
         @csrf
         <div class="form-group">
             <label>
