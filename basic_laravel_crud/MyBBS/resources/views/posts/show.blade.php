@@ -10,7 +10,7 @@
             {{ $post->title }}
         </span>
         <a href="{{ route('posts.edit', $post) }}">[Edit]</a>
-        <form action="{{ route('posts.destroy', $post) }}" method="post">
+        <form id="delete_post" action="{{ route('posts.destroy', $post) }}" method="post">
             @method('DELETE')
             @csrf
 
@@ -18,4 +18,20 @@
         </form>
     </h1>
     <p>{!! nl2br(e($post->body)) !!}</p>
+
+    <script>
+        'use strict';
+
+        {
+            document.querySelector('#delete_post').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                if(!confirm('{{$post->title}} を削除してよろしいですか？')) {
+                    return;
+                }
+
+                e.target.submit();
+            });
+        }
+    </script>
 </x-layout>
